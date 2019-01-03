@@ -17,11 +17,12 @@ Below is the methodology for obtaining the release dates along with examples (fo
 ![intellij_idea_2018 2 2_released](https://user-images.githubusercontent.com/6374067/49457306-7cc5d200-f79f-11e8-91fc-9505439e40c6.png)
 4) **Check the JetBrains Confluence Page for the respective IntelliJ IDEA Release Notes version**
 ![intellij_idea_2018 1_release_notes](https://user-images.githubusercontent.com/6374067/49457372-8f400b80-f79f-11e8-924e-59bb58a70716.png)
+
 _**Note:**_ This likely will require URL manipulation, some examples below:
-    * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2018.1+Release+Notes
-    * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2017.3.5+Release+Notes
-    * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2016.1.2+Release+Notes
-    * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+15.0.5+Release+Notes 
+  * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2018.1+Release+Notes
+  * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2017.3.5+Release+Notes
+  * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2016.1.2+Release+Notes
+  * https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+15.0.5+Release+Notes 
     
     
 ## Contributing
