@@ -28,7 +28,7 @@ Below you will find a table of the JetBrains IntelliJ IDEA Release Dates.
 | **3.1** |                |                |                |                |   2016-12-13   |   2017-12-12   |   2018-12-05   |
 | **3.2** |                |                |                |                |   2016-12-26   |   2017-12-27   |   2018-12-18   |
 | **3.3** |                |                |                |                |   2017-01-17   |   2018-01-16   |   2019-01-09   |
-| **3.4** |                |                |                |                |   2017-02-01   |   2018-01-31   |                |
+| **3.4** |                |                |                |                |   2017-02-01   |   2018-01-31   |   2019-01-29   |
 | **3.5** |                |                |                |                |   2017-03-07   |   2018-03-13   |                |
 
 _YYYY-MM-DD_ = **Late Release** - a release that happened ***after*** a subsequent version was released.
