@@ -1,0 +1,111 @@
+name: JetBrains IDE Release Date Fetcher
+
+on:
+  # Run this workflow on a schedule; every hour.
+  schedule:
+    - cron: "0 * * * *"
+
+  # Allow a manually triggered execution of this workflow.
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: "Fetch, Build, & Push"
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout Repo
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      # Set up Python
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      # Install Python Dependencies
+      - name: Install Python Dependencies
+        working-directory: ./release_date_fetcher
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # Regenerate Markdown files
+      - name: Regenerate Markdown files
+        working-directory: ./release_date_fetcher
+        run: |
+          python generate_markdown_files.py
+
+      # Check for file changes
+      - name: Check for file changes
+        id: check_files
+        run: |
+          echo "::group::=============== modified files ==============="
+          git update-index --refresh
+          git diff-index --name-only HEAD -- > modified_files.txt
+          cat modified_files.txt
+          echo "::endgroup::"
+
+          echo "::group::========== check paths of modified files =========="
+          while IFS= read -r file
+          do
+            echo "Checking $file file..."
+            if [[ $file = ides/* ]]; then
+              echo "A modified file was found under the ides/ directory."
+              echo "::set-output name=has_modified_ide_file::true"
+              break
+            else
+              echo "::set-output name=has_modified_ide_file::false"
+            fi
+          done < modified_files.txt
+          echo "::endgroup::"
+
+      # Failsafe: Ensure we are only making additions and not deleting files
+      - name: "Failsafe: Ensure no bulk deletions."
+        if: steps.check_files.outputs.has_modified_ide_file == 'true'
+        run: |
+          echo "::group::=============== file change count (addition, deletion, file path) ==============="
+          git diff --numstat | grep -E "^[0-9]+[[:space:]]+[0-9]+[[:space:]]+ides/" > file_change_count.txt
+          cat file_change_count.txt
+          echo "::endgroup::"
+
+          echo "::group::========== check to ensure deletions do not exceed additions for each file =========="
+          while IFS= read -r line
+          do
+            echo "Parsing line [ $line ]..."
+            additions=$(echo $line | cut -f1 -d" ")
+            deletions=$(echo $line | cut -f2 -d" ")
+            filepath=$(echo $line | cut -f3 -d" ")
+            if [[ $deletions -gt $additions ]]; then
+              echo "::error::There are more deletions than additions - this might not be expected; failing step."
+              echo "::error::    Additions: $additions"
+              echo "::error::    Deletions: $deletions"
+              echo "::error::    File Path: $filepath"
+              exit 1
+            else
+              echo -e "\033[32mOK\033[0m: $filepath - \033[0;31m$deletions deletions\033[0m and \033[0;36m$additions additions\033[0m. (\033[32mPASS\033[0m: \033[0;31m$deletions\033[0m <= \033[0;36m$additions\033[0m)"
+            fi
+          done < file_change_count.txt
+          echo "::endgroup::"
+
+      # Commit changed files
+      - name: Commit changed files
+        if: steps.check_files.outputs.has_modified_ide_file == 'true'
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          cat << EOF | git commit --file - ides/*
+          Update IDE release dates.
+
+          Files changed:
+          --------------
+          $(cat modified_files.txt | grep "^ides/")
+          EOF
+
+      # Push changes
+      - name: Push changes
+        if: steps.check_files.outputs.has_modified_ide_file == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}

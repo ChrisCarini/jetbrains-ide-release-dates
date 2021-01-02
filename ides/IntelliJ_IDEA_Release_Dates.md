@@ -1,4 +1,8 @@
 # IntelliJ IDEA Release Dates
+
+> :warning: **See [IntelliJ IDEA Ultimate](IntelliJ_IDEA_Ultimate_Release_Dates.md) for subsequent updates!**
+> This file is currently being kept for posterity; it may be removed at any time.
+
 Below you will find a table of the JetBrains IntelliJ IDEA Release Dates.
 
 |   X.Y   |       12       |       13       |       14       |       15       |      2016      |      2017      |      2018      |      2019      |      2020      |
