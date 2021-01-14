@@ -41,7 +41,11 @@ jobs:
         id: check_files
         run: |
           echo "::group::=============== modified files ==============="
-          git update-index --refresh
+          # We do a logical `or` with `true` to prevent this line
+          # from causing the execution to fail when a non-zero exit
+          # is returned by `git update-index`. This happens when the
+          # command is run and there have been file changes.
+          git update-index --refresh || true
           git diff-index --name-only HEAD -- > modified_files.txt
           cat modified_files.txt
           echo "::endgroup::"
