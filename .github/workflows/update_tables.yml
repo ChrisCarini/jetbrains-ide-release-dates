@@ -1,9 +1,9 @@
 name: JetBrains IDE Release Date Fetcher
 
 on:
-  # Run this workflow on a schedule; every hour.
+  # Run this workflow on a schedule; every day at 1800UTC.
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 18 * * *"
 
   # Allow a manually triggered execution of this workflow.
   workflow_dispatch:
