@@ -1,12 +1,14 @@
-# Set update schedule for GitHub Actions
+# Dependabot configuration:
+# https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/configuration-options-for-dependency-updates
 
 version: 2
 updates:
-
+  # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every weekday
       interval: "daily"
     labels:
       - "merge when passing"  # This is a label that [Repo Ranger](https://github.com/apps/repo-ranger) will pickup and auto-merge when all GH checks pass.
+    reviewers:
+      - ChrisCarini
