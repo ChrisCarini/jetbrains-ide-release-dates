@@ -1,5 +1,7 @@
 # JetBrains IDE Release Dates
 
+[![All Contributors](https://img.shields.io/github/all-contributors/ChrisCarini/jetbrains-ide-release-dates?color=ee8449&style=flat-square)](#contributors)
+
 ## Description
 
 The intent of this repository is to capture the actual release dates for JetBrains IDEs. The concept stems from a wiki
@@ -32,9 +34,11 @@ that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** 
 
 **Answer:** These two IDEs have identical release cadences with the respective paid versions.
 
-- IntelliJ IDEA Community Edition (see [IntelliJ IDEA Ultimate](ides/IntelliJ_IDEA_Ultimate_Release_Dates.md) - release dates
+- IntelliJ IDEA Community Edition (see [IntelliJ IDEA Ultimate](ides/IntelliJ_IDEA_Ultimate_Release_Dates.md) - release
+  dates
   identical as of 2021-01-01.)
-- PyCharm Community Edition (see [PyCharm Professional Edition](ides/PyCharm_Professional_Edition_Release_Dates.md) - PyCharm Pro has
+- PyCharm Community Edition (see [PyCharm Professional Edition](ides/PyCharm_Professional_Edition_Release_Dates.md) -
+  PyCharm Pro has
   a longer release history, with otherwise identical release dates.)
 
 ## Obtaining Release Dates
@@ -71,3 +75,14 @@ python generate_markdown_files.py
 ## Contributing
 
 We love contributions! See our [CONTRIBUTING](docs/CONTRIBUTING.md) file for more information.
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
