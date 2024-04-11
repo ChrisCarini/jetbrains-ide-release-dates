@@ -1,6 +1,6 @@
 certifi==2023.7.22
 chardet==4.0.0
-idna==2.10
+idna==3.7
 numpy==1.22.0
 packaging==20.8
 pandas==1.2.0
