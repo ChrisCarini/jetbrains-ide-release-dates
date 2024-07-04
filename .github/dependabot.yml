@@ -8,7 +8,5 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    labels:
-      - "merge when passing"  # This is a label that [Repo Ranger](https://github.com/apps/repo-ranger) will pickup and auto-merge when all GH checks pass.
     reviewers:
       - ChrisCarini
