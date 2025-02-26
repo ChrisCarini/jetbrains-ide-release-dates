@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any
 
 import numpy as np
 import pandas as pd
@@ -31,15 +31,15 @@ def get_data(ides: List[str]):
     return requests.get(url=url).json()
 
 
-for ide in get_data(IDES):
-    code = ide['code']
-    name = ide['name']
+def render_product_release_dates(product: dict[str, Any]) -> None:
+    code = product['code']
+    name = product['name']
 
     # Create a DataFrame to store the dates
     df = pd.DataFrame()
 
     print(f'Processing releases for {code} -> {name}')
-    for release in ide['releases']:
+    for release in product['releases']:
         # Extract the version information for this particular release.
         # We want the `major` version, and `minor.patch`, as that is how the table is formatted.
         version = Version(release['version'])
@@ -75,3 +75,8 @@ for ide in get_data(IDES):
         f.write(f'Below you will find a table of the JetBrains {name} Release Dates.\n')
         f.write("\n")
         f.write(markdown_table)
+
+
+if __name__ == '__main__':
+    for product in get_data(ides=IDES):
+        render_product_release_dates(product)
