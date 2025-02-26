@@ -5,7 +5,7 @@ import pandas as pd
 import requests
 from packaging.version import Version
 
-# curl -s "https://data.services.jetbrains.com/products?release.type=release"  | jq '.[] | "\(.code) -> \(.name)"'
+# curl -s "https://data.services.jetbrains.com/products?release.type=release"  | jq -r '.[] | "\"\(.code)\",  # \(.name)"' | sort
 IDES = [
     "AC",  # AppCode
     "CL",  # CLion
