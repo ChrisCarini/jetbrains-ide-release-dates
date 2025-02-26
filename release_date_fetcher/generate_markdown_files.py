@@ -52,6 +52,11 @@ for ide in get_data(IDES):
 
     # Change the column names to ints before sorting
     df.columns = [int(x) for x in df.columns]
+    
+    # Ensure the index is treated as numeric for sorting purposes.
+    # This will ensure that the ordering is `1.3 -> 2.0 -> ... -> 10.0 -> 11.0`
+    # (as opposed to `1.3 -> 10.0 -> 11.0 -> ... -> 2.0`)
+    df.index = pd.to_numeric(df.index, errors='coerce')
 
     # Sort the rows and columns
     df = df.reindex(sorted(df.columns), axis=1).sort_index()
