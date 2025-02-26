@@ -20,13 +20,21 @@ that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** 
 - [CLion](ides/CLion_Release_Dates.md)
 - [GoLand](ides/GoLand_Release_Dates.md)
 - [IntelliJ IDEA Ultimate](ides/IntelliJ_IDEA_Ultimate_Release_Dates.md)
-- [PyCharm Professional Edition](ides/PyCharm_Professional_Edition_Release_Dates.md)
 - [PhpStorm](ides/PhpStorm_Release_Dates.md)
+- [PyCharm Professional Edition](ides/PyCharm_Professional_Edition_Release_Dates.md)
 - [ReSharper C++](ides/ReSharper_C%2B%2B_Release_Dates.md)
+- [ReSharper](ides/ReSharper_Release_Dates.md)
 - [Rider](ides/Rider_Release_Dates.md)
 - [RubyMine](ides/RubyMine_Release_Dates.md)
-- [ReSharper](ides/ReSharper_Release_Dates.md)
+- [RustRover](ides/RustRover_Release_Dates.md)
 - [WebStorm](ides/WebStorm_Release_Dates.md)
+
+## Other JetBrains Products
+
+- [Floating License Server](ides/Floating_License_Server_Release_Dates.md)
+- [IDE Services](ides/IDE_Services_Release_Dates.md)
+- [Mono Font](ides/Mono_Font_Release_Dates.md)
+- [Toolbox App](ides/Toolbox_App_Release_Dates.md)
 
 ## Frequently Asked Questions (FAQ)
 

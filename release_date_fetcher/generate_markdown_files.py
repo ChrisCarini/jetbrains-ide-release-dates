@@ -9,15 +9,21 @@ from packaging.version import Version
 IDES = [
     "AC",  # AppCode
     "CL",  # CLion
+    "FLS",  # Floating License Server
     "GO",  # GoLand
+    "IDES",  # IDE Services
     "IIU",  # IntelliJ IDEA Ultimate
+    "MF",  # Mono Font
     "PCP",  # PyCharm Professional Edition
     "PS",  # PhpStorm
     "RC",  # ReSharper C++
     "RD",  # Rider
     "RM",  # RubyMine
+    "RR",  # RustRover
     "RS",  # ReSharper
+    "TBA",  # Toolbox App
     "WS",  # WebStorm
+    "YTD",  # YouTrack
 
     # We leave the below IDEs commented out, because...
     #   "IIC",  # IntelliJ IDEA Community Edition - ...the release dates are identical to IIU (as of 2021-01-01)
