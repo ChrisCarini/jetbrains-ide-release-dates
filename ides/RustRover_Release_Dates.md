@@ -24,3 +24,4 @@ Below you will find a table of the JetBrains RustRover Release Dates.
 | 3.3 | 2025-01-17 |
 | 3.4 | 2025-01-28 |
 | 3.5 | 2025-02-25 |
+| 3.6 | 2025-03-04 |
