@@ -32,6 +32,7 @@ that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** 
 ## Other JetBrains Products
 
 - [Floating License Server](ides/Floating_License_Server_Release_Dates.md)
+- [Gateway (Remote Development)](ides/Gateway_Release_Dates.md)
 - [IDE Services](ides/IDE_Services_Release_Dates.md)
 - [Mono Font](ides/Mono_Font_Release_Dates.md)
 - [Toolbox App](ides/Toolbox_App_Release_Dates.md)
@@ -96,6 +97,7 @@ We love contributions! See our [CONTRIBUTING](docs/CONTRIBUTING.md) file for mor
       <td align="center" valign="top" width="14.28%"><a href="https://www.cthing.com"><img src="https://avatars.githubusercontent.com/u/989635?v=4?s=100" width="100px;" alt="Baron Roberts"/><br /><sub><b>Baron Roberts</b></sub></a><br /><a href="#code-baron1405" title="Code">💻</a> <a href="#ideas-baron1405" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-baron1405" title="Maintenance">🚧</a> <a href="#review-baron1405" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/vicky17d"><img src="https://avatars.githubusercontent.com/u/1669024?v=4?s=100" width="100px;" alt="vicky17d"/><br /><sub><b>vicky17d</b></sub></a><br /><a href="#code-vicky17d" title="Code">💻</a> <a href="#maintenance-vicky17d" title="Maintenance">🚧</a> <a href="#review-vicky17d" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/opticyclic"><img src="https://avatars.githubusercontent.com/u/1222693?v=4?s=100" width="100px;" alt="opticyclic"/><br /><sub><b>opticyclic</b></sub></a><br /><a href="#content-opticyclic" title="Content">🖋</a> <a href="#example-opticyclic" title="Examples">💡</a> <a href="#ideas-opticyclic" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/opticyclic"><img src="https://avatars.githubusercontent.com/u/16896724?v=4?s=100" width="100px;" alt="gehbiszumeis"/><br /><sub><b>gehbiszumeis</b></sub></a><br /><a href="#content-gehbizumeis" title="Content">🖋</a></td>
     </tr>
   </tbody>
 </table>
