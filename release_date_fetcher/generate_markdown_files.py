@@ -10,6 +10,7 @@ IDES = [
     "AC",  # AppCode
     "CL",  # CLion
     "FLS",  # Floating License Server
+    "GW", # Gateway
     "GO",  # GoLand
     "IDES",  # IDE Services
     "IIU",  # IntelliJ IDEA Ultimate
