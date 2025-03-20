@@ -32,6 +32,7 @@ that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** 
 ## Other JetBrains Products
 
 - [Floating License Server](ides/Floating_License_Server_Release_Dates.md)
+- [Gateway (Remote Development)](ides/Gateway_Release_Dates.md)
 - [IDE Services](ides/IDE_Services_Release_Dates.md)
 - [Mono Font](ides/Mono_Font_Release_Dates.md)
 - [Toolbox App](ides/Toolbox_App_Release_Dates.md)
