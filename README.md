@@ -21,7 +21,7 @@ that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** 
 - [GoLand](ides/GoLand_Release_Dates.md)
 - [IntelliJ IDEA Ultimate](ides/IntelliJ_IDEA_Ultimate_Release_Dates.md)
 - [PhpStorm](ides/PhpStorm_Release_Dates.md)
-- [PyCharm Professional Edition](ides/PyCharm_Professional_Edition_Release_Dates.md)
+- [PyCharm](ides/PyCharm_Release_Dates.md)
 - [ReSharper C++](ides/ReSharper_C%2B%2B_Release_Dates.md)
 - [ReSharper](ides/ReSharper_Release_Dates.md)
 - [Rider](ides/Rider_Release_Dates.md)
@@ -49,6 +49,10 @@ that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** 
 - PyCharm Community Edition (see [PyCharm Professional Edition](ides/PyCharm_Professional_Edition_Release_Dates.md) -
   PyCharm Pro has
   a longer release history, with otherwise identical release dates.)
+  - *Note(s):*
+    - Prior to 2025.1, PyCharm Community and PyCharm Professional Edition were different IDEs. They have merged into one as of the 2025.1 release on 2025-04-16.
+    - See JetBrains' blog post ["PyCharm, the Only Python IDE You Need"](https://blog.jetbrains.com/pycharm/2025/04/unified-pycharm/) for details.
+    - See [PyCharm Professional Edition](ides/PyCharm_Professional_Edition_Release_Dates.md) for the old file (which automation will no longer update).
 
 ## Obtaining Release Dates
 
