@@ -17,3 +17,4 @@ Below you will find a table of the JetBrains Gateway Release Dates.
 | 3.2 | 2023-01-27 | 2023-12-21 | 2025-01-21 |            |
 | 3.3 |            | 2024-01-31 | 2025-02-13 |            |
 | 3.4 |            | 2024-02-15 |            |            |
+| 3.6 |            |            | 2025-05-28 |            |
