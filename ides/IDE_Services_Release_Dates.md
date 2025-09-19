@@ -17,3 +17,4 @@ Below you will find a table of the JetBrains IDE Services Release Dates.
 | 4.0 | 2024-10-24 | 2025-08-05 |
 | 4.1 |            | 2025-08-11 |
 | 4.2 |            | 2025-08-27 |
+| 5.0 |            | 2025-09-19 |
