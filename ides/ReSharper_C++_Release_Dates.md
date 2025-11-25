@@ -30,3 +30,4 @@ Below you will find a table of the JetBrains ReSharper C++ Release Dates.
 | 3.6 |            |            |            |            |            |            |            | 2024-06-10 | 2025-02-28 |            |
 | 3.7 |            |            |            |            |            |            |            |            | 2025-04-03 |            |
 | 3.8 |            |            |            |            |            |            |            |            | 2025-05-20 |            |
+| 3.9 |            |            |            |            |            |            |            |            | 2025-11-24 |            |
