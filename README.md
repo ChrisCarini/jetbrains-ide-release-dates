@@ -19,7 +19,8 @@ that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** 
 - [AppCode](ides/AppCode_Release_Dates.md)
 - [CLion](ides/CLion_Release_Dates.md)
 - [GoLand](ides/GoLand_Release_Dates.md)
-- [IntelliJ IDEA Ultimate](ides/IntelliJ_IDEA_Ultimate_Release_Dates.md)
+- [IntelliJ IDEA](ides/IntelliJ_IDEA_Release_Dates.md)
+  - **Note:** As of 2025.3 (released on 2025-12-08), _["there is one IntelliJ IDEA, replacing the separate IntelliJ IDEA Community Edition and IntelliJ IDEA Ultimate to keep things simple and convenient"](https://blog.jetbrains.com/idea/2025/12/intellij-idea-unified-release/)_.
 - [PhpStorm](ides/PhpStorm_Release_Dates.md)
 - [PyCharm](ides/PyCharm_Release_Dates.md)
 - [ReSharper C++](ides/ReSharper_C%2B%2B_Release_Dates.md)
