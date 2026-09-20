@@ -1,3 +1,6 @@
+---
+permalink: /about/
+---
 # JetBrains IDE Release Dates
 
 [![All Contributors](https://img.shields.io/github/all-contributors/ChrisCarini/jetbrains-ide-release-dates?color=ee8449&style=flat-square)](#contributors)
