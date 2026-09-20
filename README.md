@@ -17,6 +17,69 @@ to better plan our week / month / year to enable our developers to be as product
 Very simply, the idea here is to allow one to more accurately predict (we used to just guess months out - turns out,
 that's very inaccurate) about when a particular IntelliJ IDEA release ***may*** occur based on historical data.
 
+## Website and previews
+
+The Jekyll website renders the existing Markdown histories directly; the release-date fetcher and its data format are
+unchanged. It includes a product directory, horizontally scrollable release tables, and archived edition histories.
+
+**Recommended: preview locally first, then review the PR's downloadable preview before publishing.** Neither option
+requires enabling GitHub Pages, and merging this setup does not publish the site automatically.
+
+### Preview locally
+
+With Ruby 3.3 and Bundler installed, run these commands from the repository root:
+
+```shell
+bundle install
+bundle exec jekyll serve
+```
+
+Open <http://127.0.0.1:4000/jetbrains-ide-release-dates/>. Jekyll rebuilds when you edit site files; restart it after
+changing `_config.yml`. This uses the same project subpath as production, so you can check navigation and styling.
+For a build without starting a server, run `bundle exec jekyll build`.
+
+### Preview a pull request
+
+The **Site preview / Build and preview** check builds both the production configuration and a standalone preview on
+each PR, including fork PRs. It also runs on pushes to `main` and can be run manually from the Actions tab once the
+workflow is on the default branch. GitHub may require maintainer approval before running a first-time contributor's workflow.
+
+1. Open the PR's **Checks** tab and follow the **Site preview** workflow to its run summary.
+2. Download the **site-preview** artifact (GitHub sign-in required; retained for 14 days).
+3. Extract the ZIP and, from the extracted folder containing `index.html`, run:
+
+   ```shell
+   python3 -m http.server 8000 --bind 127.0.0.1
+   ```
+
+4. Open <http://127.0.0.1:8000/>. No Ruby installation is needed for an artifact preview.
+
+Do not double-click the HTML files: their links and assets require an HTTP server. The preview uses an empty base path
+for convenient local serving; the production build separately checks the configured `/jetbrains-ide-release-dates` path.
+PR builds have read-only repository access, no deployment permissions, and never overwrite the live site.
+
+GitHub Pages does not provide built-in isolated PR preview URLs. Artifacts are the simplest GitHub-only option that
+keeps unpublished changes off the live site. If clickable, remotely hosted previews become necessary, a separate service
+such as Cloudflare Pages or Netlify can provide isolated deploy previews, but requires an additional integration.
+
+### Publish when ready
+
+Nothing has to be published to use the previews. After reviewing them:
+
+1. Merge the site and workflows to `main`.
+2. In **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source (not deployment from a branch).
+3. In **Settings → Environments → github-pages**, restrict deployment branches to `main`. Optionally require a reviewer
+   for an additional approval before each publication, where supported.
+4. Run **Actions → Deploy GitHub Pages → Run workflow**, selecting `main`. This explicitly publishes the site to
+   <https://chriscarini.github.io/jetbrains-ide-release-dates/>.
+
+By default, publication is manual; merging a PR or updating release data will not republish it. After launch, you can
+optionally set the repository Actions variable **`PAGES_AUTO_DEPLOY`** to **`true`** under
+**Settings → Secrets and variables → Actions → Variables**. This enables deployments on pushes to `main` and successful
+completions of **JetBrains IDE Release Date Fetcher** on `main`. The latter is necessary because commits pushed by
+`GITHUB_TOKEN` do not trigger another push workflow. Production always builds `main`, never a PR's code or artifacts.
+Remove the variable or set it to `false` to return to manual publication; this does not unpublish an existing site.
+
 ## JetBrains IDEs
 
 - [AppCode](ides/AppCode_Release_Dates.md)
