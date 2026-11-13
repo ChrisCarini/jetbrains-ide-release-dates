@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<a class="back-link" href="{{ '/' | relative_url }}#products">← All products</a>
+{% if page.archived %}
+<aside class="notice">
+  This edition's history is archived. <a href="{{ page.successor | relative_url }}">See the unified product's release dates.</a>
+</aside>
+{% endif %}
+<article class="product-history">
+  {{ content | replace: '<table>', '<div class="table-scroll" role="region" aria-label="Release date history" tabindex="0"><table>' | replace: '</table>', '</table></div>' }}
+</article>
+<div class="table-notes">
+  <p>Columns show the major version or year; rows show the minor/patch version. Dates use <strong>YYYY-MM-DD</strong>. Blank cells mean no recorded release.</p>
+  <p>Scroll the table horizontally to explore all years. Historical dates are not a guarantee of future release timing.</p>
+  <a href="{{ site.repository_url }}/blob/main/{{ page.path | uri_escape }}">View source data on GitHub <span aria-hidden="true">↗</span></a>
+</div>

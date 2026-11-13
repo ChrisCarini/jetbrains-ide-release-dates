@@ -4,3 +4,8 @@
 *.iws
 venv/
 activate
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/bundle/

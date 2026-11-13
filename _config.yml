@@ -1,0 +1,41 @@
+title: JetBrains IDE Release Dates
+description: Historical release dates for JetBrains IDEs and tools, all in one place.
+url: "https://chriscarini.github.io"
+baseurl: "/jetbrains-ide-release-dates"
+repository_url: "https://github.com/ChrisCarini/jetbrains-ide-release-dates"
+lang: en
+
+plugins:
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+
+optional_front_matter:
+  remove_originals: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "ides"
+    values:
+      layout: product
+  - scope:
+      path: "ides/IntelliJ_IDEA_Ultimate_Release_Dates.md"
+    values:
+      archived: true
+      successor: "/ides/IntelliJ_IDEA_Release_Dates.html"
+  - scope:
+      path: "ides/PyCharm_Professional_Edition_Release_Dates.md"
+    values:
+      archived: true
+      successor: "/ides/PyCharm_Release_Dates.html"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - release_date_fetcher
+  - vendor
