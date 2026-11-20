@@ -1,0 +1,68 @@
+name: Site preview
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and preview
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@a0102e0972be65f351c307e2d64b9314a57c8073 # v1.324.0
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
+      - name: Validate the production build
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --destination "$RUNNER_TEMP/site-production" --trace
+
+      - name: Build a standalone preview
+        env:
+          JEKYLL_ENV: production
+        run: bundle exec jekyll build --baseurl "" --destination "$RUNNER_TEMP/site-preview" --trace
+
+      - name: Upload preview
+        id: preview
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: site-preview
+          path: ${{ runner.temp }}/site-preview
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Explain how to view the preview
+        env:
+          PREVIEW_URL: ${{ steps.preview.outputs.artifact-url }}
+        run: |
+          {
+            echo '## Site preview (not published)'
+            echo
+            echo "[Download the preview artifact]($PREVIEW_URL) (GitHub sign-in required; retained for 14 days)."
+            echo
+            echo 'Extract the ZIP, then run this from the folder containing `index.html`:'
+            echo
+            echo '```sh'
+            echo 'python3 -m http.server 8000 --bind 127.0.0.1'
+            echo '```'
+            echo
+            echo 'Open http://127.0.0.1:8000/. Do not open the HTML with a file:// URL.'
+            echo 'This build has no deployment permissions and does not change the live site.'
+          } >> "$GITHUB_STEP_SUMMARY"

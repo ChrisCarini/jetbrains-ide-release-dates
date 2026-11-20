@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-mark" aria-hidden="true">JB<span> / </span></span>
+          <span>Release dates</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="{{ '/' | relative_url }}#products">Products</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ site.repository_url }}">GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+    <main id="main" class="container{% if page.home %} home{% endif %}">
+      {{ content }}
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>A community-maintained release history. Not affiliated with JetBrains.</p>
+        <a href="{{ '/docs/CONTRIBUTING.html' | relative_url }}">Contribute <span aria-hidden="true">↗</span></a>
+      </div>
+    </footer>
+  </body>
+</html>

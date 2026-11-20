@@ -1,0 +1,60 @@
+---
+title: Explore release history
+home: true
+---
+{% assign products = site.pages | where: "layout", "product" | sort_natural: "title" %}
+{% assign histories = products | where_exp: "product", "product.archived != true" %}
+{% assign archives = products | where: "archived", true %}
+<section class="hero" aria-labelledby="hero-title">
+  <p class="eyebrow">A little history. Better planning.</p>
+  <h1 id="hero-title">Every release has<br>a <span>date.</span></h1>
+  <p class="hero-description">Explore the release history of JetBrains IDEs and tools. Spot the patterns, understand the cadence, and plan your next upgrade.</p>
+  <a class="button" href="#products">Explore products <span aria-hidden="true">↓</span></a>
+  <div class="hero-details">
+    <span><strong>{{ histories.size }}</strong> product histories</span>
+    <span>Dates from the <strong>JetBrains API</strong></span>
+    <span>Open source &amp; community maintained</span>
+  </div>
+</section>
+
+<section id="products" aria-labelledby="products-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">The release archive</p>
+      <h2 id="products-title">Find your product</h2>
+    </div>
+    <p>From first release to the latest update.</p>
+  </div>
+  <ul class="product-grid">
+    {% for product in histories %}
+    <li>
+      <a class="product-card" href="{{ product.url | relative_url | uri_escape }}">
+        <span class="product-icon" aria-hidden="true">{{ product.title | slice: 0, 2 | upcase }}</span>
+        <span>
+          <span class="product-name">{{ product.title | remove: " Release Dates" | escape }}</span>
+          <span class="product-caption">Explore release dates</span>
+        </span>
+        <span class="card-arrow" aria-hidden="true">↗</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="archive-section" aria-labelledby="archive-title">
+  <h2 id="archive-title">Looking for an older edition?</h2>
+  <p>IntelliJ IDEA and PyCharm now have unified editions. Their earlier, edition-specific histories are preserved here.</p>
+  <ul class="archive-links">
+    {% for product in archives %}
+    <li><a href="{{ product.url | relative_url | uri_escape }}">{{ product.title | remove: " Release Dates" | escape }} <span aria-hidden="true">→</span></a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<aside class="about-callout">
+  <div>
+    <h2>History, not a crystal ball.</h2>
+    <p>Past releases help you spot a cadence, not predict an exact date. Learn where the data comes from and why this project exists.</p>
+  </div>
+  <a href="{{ '/about/' | relative_url }}">About this project <span aria-hidden="true">→</span></a>
+</aside>
